@@ -10,3 +10,9 @@ SELECT T.stage_name,count(M.stage_id)
 
 select * from tournament_stages
 where is_knockout is true
+
+--Show the 5 referees with the highest avg_cards_per_game.
+
+select * from referees
+order by avg_cards_per_game desc
+limit 5
