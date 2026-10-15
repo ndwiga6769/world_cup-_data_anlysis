@@ -16,3 +16,32 @@ where is_knockout is true
 select * from referees
 order by avg_cards_per_game desc
 limit 5
+
+
+-- Which matches went to a penalty shootout (penalty scores not null) name the teams that played
+
+select M.match_id,
+		M.stage_id,
+		M.home_team_id,
+		M.away_team_id,
+		a.team_name,
+		h.team_name,
+from matches M
+join teams a ON T.team_id = M.home_team_id 
+JOIN teams h ON T.team_id = M.away_team_id
+where home_penalty_score is NOT NULL
+
+SELECT m.match_id,
+       m.stage_id,
+       h.team_name AS home_team,
+       a.team_name AS away_team,
+       m.home_score,
+       m.away_score,
+       m.home_penalty_score,
+       m.away_penalty_score
+FROM public.matches m
+JOIN public.teams h ON h.team_id = m.home_team_id
+JOIN public.teams a ON a.team_id = m.away_team_id
+WHERE m.home_penalty_score IS NOT NULL
+  AND m.away_penalty_score IS NOT NULL
+ORDER BY m.match_id;
