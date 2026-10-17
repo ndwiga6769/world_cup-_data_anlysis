@@ -54,3 +54,13 @@ SELECT match_id,
        home_score + away_score AS total_goals
 FROM matches
 WHERE home_score + away_score >= 5;
+
+--How many players are there in each position?
+select position,count (*) 
+from player_stats
+group by 1
+
+--How many players are there in each position?
+select position,count (*) 
+from player_stats
+group by 1
