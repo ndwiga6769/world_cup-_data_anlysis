@@ -48,3 +48,9 @@ ORDER BY m.match_id;
 
 --What is the total number of goals scored in the tournament?
 select sum(home_score) + sum(away_score) as total_score from matches
+
+--List matches with 5 or more total goals.
+SELECT match_id,
+       home_score + away_score AS total_goals
+FROM matches
+WHERE home_score + away_score >= 5;
