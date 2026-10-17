@@ -45,3 +45,6 @@ JOIN public.teams a ON a.team_id = m.away_team_id
 WHERE m.home_penalty_score IS NOT NULL
   AND m.away_penalty_score IS NOT NULL
 ORDER BY m.match_id;
+
+--What is the total number of goals scored in the tournament?
+select sum(home_score) + sum(away_score) as total_score from matches
