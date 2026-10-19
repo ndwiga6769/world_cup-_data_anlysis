@@ -83,3 +83,9 @@ select *
 from public.squads_and_players
 order by goals desc
 limit 10
+
+-- Which players have received a red card?
+
+select *
+from player_stats
+where red_cards >= 1
