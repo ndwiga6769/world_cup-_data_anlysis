@@ -77,3 +77,9 @@ select *
 from public.squads_and_players
 order by height_cm desc
 limit 5
+
+-- Who are the top 10 goal scorers in player_stats?
+select * 
+from public.squads_and_players
+order by goals desc
+limit 10
