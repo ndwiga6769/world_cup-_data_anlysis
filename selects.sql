@@ -71,3 +71,9 @@ from public.squads_and_players
 where market_value_eur is not null
 order by market_value_eur desc
 limit 10;
+
+--Who are the 5 tallest players?
+select * 
+from public.squads_and_players
+order by height_cm desc
+limit 5
