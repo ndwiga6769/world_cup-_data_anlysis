@@ -89,3 +89,10 @@ limit 10
 select *
 from player_stats
 where red_cards >= 1
+
+-- How many matches were played on each date?
+
+select date, count(*) as match_count
+from matches_detailed
+group by date
+order by match_count desc;
