@@ -64,3 +64,10 @@ group by 1
 select position,count (*) 
 from player_stats
 group by 1
+
+-- Who are the 10 most valuable players by market_value_eur?
+select *
+from public.squads_and_players
+where market_value_eur is not null
+order by market_value_eur desc
+limit 10;
