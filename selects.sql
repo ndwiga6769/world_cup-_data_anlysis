@@ -110,3 +110,8 @@ from public.matches_detailed
 where home_xg is not null and away_xg is not null
 order by combined_xg desc
 limit 1;
+
+-- How many distinct club teams are represented in squads_and_players?
+
+select count(distinct team_id) as team_count
+from public.squads_and_players;
