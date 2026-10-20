@@ -96,3 +96,9 @@ select date, count(*) as match_count
 from matches_detailed
 group by date
 order by match_count desc;
+
+-- List all Group A teams with their managers.
+select team_id, team_name, group_letter, manager_name
+from public.teams
+where group_letter = 'A'
+order by team_name;
