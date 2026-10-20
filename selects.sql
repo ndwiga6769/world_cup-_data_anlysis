@@ -102,3 +102,11 @@ select team_id, team_name, group_letter, manager_name
 from public.teams
 where group_letter = 'A'
 order by team_name;
+
+
+-- Which match had the highest combined xG?
+select match_id, home_xg, away_xg, (home_xg + away_xg) as combined_xg
+from public.matches_detailed
+where home_xg is not null and away_xg is not null
+order by combined_xg desc
+limit 1;
